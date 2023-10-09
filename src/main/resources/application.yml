@@ -1,0 +1,23 @@
+spring:
+  jpa:
+    database: POSTGRESQL
+  datasource:
+    username: postgres
+    password: postgres
+    driverClassName: org.postgresql.Driver
+
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+  datasource:
+    url: jdbc:postgresql://localhost:5433/postgres
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
